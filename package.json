@@ -1,0 +1,30 @@
+{
+  "name": "@namefully/react",
+  "version": "1.0.0",
+  "description": "React-based web component for handling person names in the Latin alphabet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ralflorent/namefully-react.git"
+  },
+  "keywords": [
+    "given name",
+    "surname",
+    "first name",
+    "last name",
+    "react"
+  ],
+  "author": {
+      "name": "Ralph Florent",
+      "email": "hi@ralflorent.com",
+      "url": "https://ralflorent.com"
+  },
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/ralflorent/namefully-react/issues"
+  },
+  "homepage": "https://github.com/ralflorent/namefully-react#readme"
+}
