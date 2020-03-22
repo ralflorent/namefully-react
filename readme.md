@@ -1,6 +1,6 @@
-# namefully-react
+# @namefully/react
 
-# Description
+## Description
 
 React-based web component for handling person names in the Latin alphabet.
 

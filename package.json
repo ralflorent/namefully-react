@@ -1,9 +1,10 @@
 {
   "name": "@namefully/react",
   "version": "1.0.0",
-  "description": "React-based web component for handling person names in the Latin alphabet",
-  "main": "index.js",
+  "description": "React-based component for handling person names in the Latin alphabet",
+  "main": "dist/index.js",
   "scripts": {
+    "start": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,13 +19,27 @@
     "react"
   ],
   "author": {
-      "name": "Ralph Florent",
-      "email": "hi@ralflorent.com",
-      "url": "https://ralflorent.com"
+    "name": "Ralph Florent",
+    "email": "hi@ralflorent.com",
+    "url": "https://ralflorent.com"
   },
   "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/ralflorent/namefully-react/issues"
   },
-  "homepage": "https://github.com/ralflorent/namefully-react#readme"
+  "homepage": "https://github.com/ralflorent/namefully-react#readme",
+  "dependencies": {
+    "namefully": "^1.0.6",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.25",
+    "@types/react-dom": "^16.9.5",
+    "source-map-loader": "^0.2.4",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11"
+  }
 }
