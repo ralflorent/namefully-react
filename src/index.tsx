@@ -13,12 +13,16 @@ ReactDOM.render(
     <Namefully
         raw='Florent Ralph Junior'
         options={{ orderedBy: 'lastname'}}
-        method='shorten'
+        method='format'
+        args={['O']}
         tag='a'
+        position='left'
 
         href='https://github.com/ralflorent'
         style={{color: 'blue'}}
-    />,
+    >
+        <span>Hi,</span>
+    </Namefully>,
     document.getElementById('root')
 );
 
