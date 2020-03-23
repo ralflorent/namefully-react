@@ -4,17 +4,29 @@
  * Created on March 22, 2020
  * @author Ralph Florent <ralflornt@gmail.com>
  */
-
+const path = require('path');
 
 module.exports = {
-    mode: "production",
+    name: '@namefully/react',
+    mode: 'production',
 
     // Enable sourcemaps for debugging webpack's output.
-    devtool: "source-map",
+    devtool: 'source-map',
+
+    entry: {
+        'index': './src/index.tsx',
+    },
+
+    output: {
+        /* path: used by webpack for generated files */
+        path: path.join(__dirname, '/dist'),
+        filename: '[name].js'
+    },
 
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
-        extensions: [".ts", ".tsx"]
+        modules: ['node_modules', path.join(__dirname, 'src')],
+        extensions: ['.ts', '.tsx', '.js', '.jsx'],
     },
 
     module: {
@@ -22,18 +34,15 @@ module.exports = {
             {
                 test: /\.ts(x?)$/,
                 exclude: /node_modules/,
-                use: [
-                    {
-                        loader: "ts-loader"
-                    }
-                ]
+                use: ['ts-loader']
             },
             // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
             {
-                enforce: "pre",
-                test: /\.js$/,
-                loader: "source-map-loader"
-            }
+                test: /\.js(x?)$/,
+                enforce: 'pre',
+                exclude: /node_modules/,
+                use: 'source-map-loader'
+            },
         ]
     },
 
@@ -42,7 +51,8 @@ module.exports = {
     // This is important because it allows us to avoid bundling all of our
     // dependencies, which allows browsers to cache those libraries between builds.
     externals: {
-        react: "React",
-        "react-dom": "ReactDOM"
+        react: 'React',
+        'react-dom': 'ReactDOM',
+        // 'namefully': 'namefully'
     }
 };

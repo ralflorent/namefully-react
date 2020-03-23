@@ -5,15 +5,18 @@
  * @author Ralph Florent <ralflornt@gmail.com>
  */
 import * as React from 'react';
-// import * as namefully from 'namefully';
+import * as nf from 'namefully';
 
 
 class Namefully extends React.Component {
 
     public render(): JSX.Element {
-        // const name = new namefully.Namefully('Ralph Florent')
+        const name = new nf.Namefully('Ralph Florent')
         return (
-            <p> Hello, Ralph!</p>
+            <div style={{textAlign: 'center'}}>
+                <h1>Namefully</h1>
+                <p> Hello, {name.fn()}!</p>
+            </div>
         );
     }
 
