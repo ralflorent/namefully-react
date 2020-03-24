@@ -68,14 +68,15 @@ export { Props as NamefullyProps };
 export { Config, CONFIG, Parser, version };
 
 /**
- * Make some models available
+ * Make some models of `Namefully` available
  */
 export { Name, Firstname, Lastname, Fullname, Prefix, Suffix, Nama, Namon };
 
 /**
- * Namefully, react-based component to handle person names in the Latin alphabet
+ * Namefully, react-based component to handle person names in the Latin alphabet.
+ * @function component or presentational react component
  *
- *`Namefully` does not magically guess which part of the name is what. It relies
+ * Namefully does not magically guess which part of the name is what. It relies
  * actually on how the developer indicates the roles of the name parts so that
  * it, internally, can perform certain operations and saves the developer some
  * calculations/processings. Nevertheless, Namefully can be constructed using
@@ -118,7 +119,7 @@ export default (props: Props): JSX.Element => {
 
     const name = new Namefully(raw, options);
 
-    const getContent = (context: any, method: Function, args: any[]) => method.apply(context, args);
+    const getContent = (context: any, fn: (params?: any) => any, vargs: any[]) => fn.apply(context, vargs);
     const content = getContent(name, name[method || 'full'], args);
 
     const Tag = tag || 'span';
