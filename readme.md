@@ -1,5 +1,6 @@
 # @namefully/react
 
+[![npm version][version-img]][version-url]
 [![CircleCI][circleci-img]][circleci-url]
 [![GPL-3.0 License][license-img]][license-url]
 
@@ -66,6 +67,8 @@ The underlying content of this project is licensed under [GPL-3.0](LICENSE).
 
 [namefully-url]: https://github.com/ralflorent/namefully
 
+[version-img]: https://img.shields.io/npm/v/@namefully/react
+[version-url]: https://www.npmjs.com/package/@namefully/react
 [circleci-img]: https://circleci.com/gh/ralflorent/namefully-react.svg?style=shield
 [circleci-url]: https://circleci.com/gh/ralflorent/namefully-react
 [license-img]: https://img.shields.io/npm/l/@namefully/react
