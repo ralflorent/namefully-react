@@ -2,6 +2,9 @@
   "name": "@namefully/react",
   "version": "1.0.0",
   "description": "React-based component for handling person names in the Latin alphabet",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "dist/lib/index.js",
   "types": "dist/lib/index.d.ts",
   "files": [
