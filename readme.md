@@ -1,12 +1,11 @@
 # @namefully/react
 
+[![CircleCI][circleci-img]][circleci-url]
+[![GPL-3.0 License][license-img]][license-url]
+
 ## Description
 
 [namefully](namefully-url)'s [React](https://reactjs.org/) version.
-
-## WIP
-
-Getting ready for release.
 
 ## Installation
 
@@ -66,3 +65,8 @@ Developed by [Ralph Florent](https://github.com/ralflorent).
 The underlying content of this project is licensed under [GPL-3.0](LICENSE).
 
 [namefully-url]: https://github.com/ralflorent/namefully
+
+[circleci-img]: https://circleci.com/gh/ralflorent/namefully-react.svg?style=shield
+[circleci-url]: https://circleci.com/gh/ralflorent/namefully-react
+[license-img]: https://img.shields.io/npm/l/@namefully/react
+[license-url]: http://www.gnu.org/licenses/gpl-3.0.en.html
