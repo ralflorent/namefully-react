@@ -6,7 +6,7 @@
 
 ## Description
 
-[namefully](namefully-url)'s [React](https://reactjs.org/) version.
+[namefully][namefully-url]'s [React](https://reactjs.org/) version.
 
 ## Installation
 
@@ -20,7 +20,7 @@ npm i @namefully/react
 
 ## Peer Dependencies
 
-- React ^16.12.0
+- React
 
 ## Usage
 
@@ -54,7 +54,7 @@ browser and type the following web address `localhost:3000` to load the content.
 
 ### Read more
 
-As this is a wrapper of the core utility, visit the [main page](namefully-url)
+As this is a wrapper of the core utility, visit the [main page][namefully-url]
 to learn more about its key features, configurations, limitations, and API.
 
 ## Author
