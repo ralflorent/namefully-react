@@ -44,6 +44,7 @@ module.exports = {
     externals: {
         react: 'React',
         'react-dom': 'ReactDOM',
+        namefully: 'namefully'
     },
 
     optimization: {
