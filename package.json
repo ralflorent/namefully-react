@@ -1,7 +1,7 @@
 {
   "name": "@namefully/react",
   "version": "1.0.0",
-  "description": "React-based component for handling person names in the Latin alphabet",
+  "description": "React-based component for handling person names",
   "publishConfig": {
     "access": "public"
   },
@@ -37,9 +37,7 @@
     "url": "https://github.com/ralflorent/namefully-react/issues"
   },
   "homepage": "https://github.com/ralflorent/namefully-react#readme",
-  "dependencies": {
-    "namefully": "^1.0.6"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/react": "^16.9.25",
     "@types/react-dom": "^16.9.5",
@@ -47,6 +45,7 @@
     "css-loader": "^3.4.2",
     "html-webpack-plugin": "^4.0.1",
     "mini-css-extract-plugin": "^0.9.0",
+    "namefully": "^1.0.9",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "source-map-loader": "^0.2.4",
@@ -60,6 +59,7 @@
   },
   "peerDependencies": {
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "namefully": "^1.0.6"
   }
 }

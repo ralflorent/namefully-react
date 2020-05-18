@@ -8,19 +8,18 @@
 
 [namefully][namefully-url]'s [React](https://reactjs.org/) version.
 
+[Try it live](https://stackblitz.com/edit/namefully-react).
+
 ## Installation
 
 ```bash
 npm i @namefully/react
 ```
 
-## Dependencies
-
-- namefully ^1.0.6
-
 ## Peer Dependencies
 
 - React
+- namefully ^1.0.6
 
 ## Usage
 
