@@ -7,7 +7,6 @@
 ## Description
 
 [namefully][namefully-url]'s [React](https://reactjs.org/) version.
-
 [Try it live](https://stackblitz.com/edit/namefully-react).
 
 ## Installation

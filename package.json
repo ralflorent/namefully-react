@@ -1,7 +1,7 @@
 {
   "name": "@namefully/react",
   "version": "1.1.1",
-  "description": "React-based component for handling person names",
+  "description": "namefully for React",
   "publishConfig": {
     "access": "public"
   },
@@ -36,7 +36,7 @@
   "bugs": {
     "url": "https://github.com/ralflorent/namefully-react/issues"
   },
-  "homepage": "https://namefully.netlify.app",
+  "homepage": "https://namefully.dev",
   "dependencies": {},
   "devDependencies": {
     "@types/react": "^16.9.25",
