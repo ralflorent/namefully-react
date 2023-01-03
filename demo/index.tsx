@@ -1,35 +1,32 @@
 /**
  * Namefully's demo
- *
- * Created on March 22, 2020
- * @author Ralph Florent <ralflornt@gmail.com>
  */
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import * as React from 'react'
+import * as ReactDOM from 'react-dom'
+import { NameOrder } from 'namefully'
 
-import { Namefully } from '../src/index';
+import { Namefully } from '../src/index'
 
-import './css/styles.css';
+import './css/styles.css'
 
 const App = () => {
     return (
-        <div className='namefully'>
+        <div className="namefully">
             <h1>Welcome to Namefully's Demo</h1>
             <Namefully
-                raw='Mr Smith John Joe PhD'
-                options={{ orderedBy: 'lastname' }}
-                method='format'
+                raw="Mr Smith John Joe PhD"
+                options={{ orderedBy: NameOrder.LAST_NAME }}
+                method="firstName"
                 args={['O']}
-                tag='a'
-                position='left'
-
-                href='https://example.com'
+                tag="a"
+                position="left"
+                href="https://example.com"
                 style={{ color: 'blue' }}
             >
                 <span>Hi,</span>
             </Namefully>
         </div>
     )
-};
+}
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'))

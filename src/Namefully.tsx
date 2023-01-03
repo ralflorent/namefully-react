@@ -1,12 +1,5 @@
-/**
- * `Namefully`, a person name handler in the Latin alphabet
- *
- * Created on March 22, 2020
- * @author Ralph Florent <ralflornt@gmail.com>
- */
-import * as React from 'react';
-import { Namefully, Config, Name, Nama } from 'namefully';
-
+import * as React from 'react'
+import { Namefully, Config, Name, JsonName, Parser } from 'namefully'
 
 /**
  * Set of properties to build a `Namefully` component. In addition, the corresponding
@@ -16,45 +9,44 @@ import { Namefully, Config, Name, Nama } from 'namefully';
  */
 interface Props extends React.AllHTMLAttributes<HTMLElement> {
     /**
-     * Holds the raw element to parse or construct the pieces of the partial or
-     * full name
+     * The raw data to parse or construct a full name.
      * @type {string | string[] | Name[] | Nama}
      */
-    raw: string | string[] | Name[] | Nama;
+    raw: string | string[] | Name[] | JsonName | Parser
     /**
-     * Optional parameters to configure how to run `Namefully`, i.e., how to create
+     * Optional parameters to configure how to run `namefully`, i.e., how to create
      * the name parts, their order of appearance and so on.
      * @type {Config}
      */
-    options?: Partial<Config>;
+    options?: Partial<Config>
     /**
      * Indicates what method of `Namefully` to execute so that the correct information
      * can be display as inner html content.
      */
-    method?: keyof Namefully;
+    method?: MethodOf<Namefully>
     /**
      * The respective arguments for the preset method, if any. Do note that the
      * correct associated argument should be passed to avoid exceptions.
      */
-    args?: any[];
+    args?: any[]
     /**
      * Defines which html tag of the set to use to render the namefully content.
      * @type {'div' | 'p' | 'a' | 'span'}, the default one is 'span'
      */
-    tag?: 'div' | 'p' | 'a' | 'span';
+    tag?: 'div' | 'p' | 'a' | 'span'
     /**
      * Where to position a child node with respect to the Namefully's content.
      * @type { 'left' | 'right' }
      */
-    position?: 'left' | 'l' | 'right' | 'r';
+    position?: 'left' | 'l' | 'right' | 'r'
     /**
      * Children node alongside the Namefully's content
      */
-    children?: JSX.Element;
+    children?: JSX.Element
 }
 
 /**
- * Namefully, react-based component to handle person names in the Latin alphabet.
+ * Namefully, react-based component to handle person names.
  * @function component or presentational react component
  *
  * @usageNotes
@@ -95,17 +87,33 @@ interface Props extends React.AllHTMLAttributes<HTMLElement> {
  * Happy name-handling!
  */
 export default (props: Props): JSX.Element => {
-    const { raw, options, method, args, tag, position, children, ...htmlAttrs } = props;
+    const { raw, options, method, args, tag, position, children, ...htmlAttrs } = props
+    const name = new Namefully(raw, options)
+    const content = executeInnerMethod(name, name[method || 'fullName'], args)
+    const Tag = tag || 'span'
 
-    const name = new Namefully(raw, options);
+    if (position === 'left' || position === 'l') {
+        return (
+            <Tag {...htmlAttrs}>
+                {children} {content}
+            </Tag>
+        )
+    }
 
-    const getContent = (context: any, fn: (params?: any) => any, vargs: any[]) => fn.apply(context, vargs);
-    const content = getContent(name, name[method || 'full'], args);
-
-    const Tag = tag || 'span';
-
-    if (position === 'left' || position === 'l')
-        return <Tag {...htmlAttrs}>{children} {content}</Tag>
-
-    return <Tag {...htmlAttrs}>{content} {children}</Tag>;
+    return (
+        <Tag {...htmlAttrs}>
+            {content} {children}
+        </Tag>
+    )
 }
+
+// tslint:disable-next-line
+function executeInnerMethod(context: any, fn: Function, args: any[]): string {
+    const content = fn.apply(context, args)
+    return Array.isArray(content) ? content.join(' ') : content
+}
+
+// tslint:disable-next-line
+type FilterFunctionKeyOnly<T> = { [K in keyof T]: T[K] extends Function ? K : never }
+
+type MethodOf<T> = FilterFunctionKeyOnly<T>[keyof T]

@@ -1,7 +1,7 @@
 # @namefully/react
 
 [![npm version][version-img]][version-url]
-[![CircleCI][circleci-img]][circleci-url]
+[![CI build][ci-img]][ci-url]
 [![MIT License][license-img]][license-url]
 
 ## Description
@@ -18,33 +18,26 @@ npm i @namefully/react
 ## Peer Dependencies
 
 - React
-- namefully ^1.0.6
+- namefully ^1.2.0
 
 ## Usage
 
 ```tsx
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import * as React from 'react'
+import * as ReactDOM from 'react-dom'
 
-import { Namefully } from '@namefully/react';
+import { Namefully } from '@namefully/react'
 
-const App = () => {
-    return (
-        <h1>
-            Hello, <Namefully raw='John Smith'/>!
-        </h1>
-    )
-};
-
-ReactDOM.render(<App />, document.getElementById('example'));
+const App = () => (<h1>Hello, <Namefully raw='John Smith'>!</h1>)
+ReactDOM.render(<App />, document.getElementById('example'))
 ```
 
 ## Demo
 
 To view a demo:
 
-- clone or download a copy of the repository.
-- install the dependencies `npm install`
+- clone or download a copy of the repository
+- install the dependencies using `npm install`
 - finally, run `npm start`
 
 The last command will bootstrap a demo by running a local web server. Use a
@@ -63,11 +56,11 @@ Developed by [Ralph Florent](https://github.com/ralflorent).
 
 The underlying content of this project is licensed under [MIT](LICENSE).
 
+<!-- References -->
 [namefully-url]: https://github.com/ralflorent/namefully
-
 [version-img]: https://img.shields.io/npm/v/@namefully/react
 [version-url]: https://www.npmjs.com/package/@namefully/react
-[circleci-img]: https://circleci.com/gh/ralflorent/namefully-react.svg?style=shield
-[circleci-url]: https://circleci.com/gh/ralflorent/namefully-react
+[ci-img]: https://github.com/ralflorent/namefully-react/workflows/build/badge.svg
+[ci-url]: https://github.com/ralflorent/namefully-react/actions/workflows/config.yml
 [license-img]: https://img.shields.io/npm/l/@namefully/react
 [license-url]: https://opensource.org/licenses/MIT
